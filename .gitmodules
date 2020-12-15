@@ -1,0 +1,3 @@
+[submodule "ruby_and_rust"]
+	path = ruby_and_rust
+	url = https://github.com/yuuki291/ruby_and_rust.git
