@@ -1,0 +1,52 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slick-slide {
+    text-align: center;
+    color: #419be0;
+    background: white;
+  }
+
+.nav {
+    list-style-type: none;
+}
+
+.content{
+    background-color: rgb(247, 245, 230);
+    margin: 20px;
+    padding: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    color: black;
+}
+img{
+    width: 100%;
+}
+
+.text{
+    color: rgb(2, 170, 170);
+}
+
+.tips{
+    text-align: right;
+}
+
+.date{
+    color: black;
+}
+
+  .hero-body{
+      background-color: #006B8D;
+  }
+
+section{
+    color: white;
+}
+
+  .title{
+      text-align: center;
+  }

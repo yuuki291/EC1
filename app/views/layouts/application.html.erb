@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </head>
+
+  <body>
+
+  <!-------------------------------追加--------------------------------------------------->
+
+   　<p class="notice"><%= notice %></p>
+  　 <p class="alert"><%= alert %></p>
+  
+  <!-------------------------------------------------------------------------------------->
+  <div style="width: 20vw;"><%= image_tag("rogo.png")%></div>
+  <%= link_to "Sign In", new_user_session_path%>
+  <%= link_to "Sign Up", new_user_registration_path%>
+  <%= link_to "sign Out", destroy_user_session_path, method: :delete %>
+
+
+  
+    <%= yield( :header ) %>
+
+    <% if user_signed_in? %>
+        <a class="navbar-brand"><%= current_user.name %></a>
+<% else %>
+        <a class="navbar-brand">User</a>
+<% end %>
+
+    <% if cart_has_items %>
+      <%= link_to cart_path(@cart) do %>
+      <span>
+      <i class="fa"></i>
+      </span>
+      <span>
+      Cart <%= cart_count_over_one %>
+      </span>
+      <% end %>
+    <% end%>
+
+     <%= yield %>
+  </body>
+</html>
